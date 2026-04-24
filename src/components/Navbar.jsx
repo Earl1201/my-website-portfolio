@@ -12,7 +12,7 @@ export default function Navbar({ dark, setDark }) {
       <a href="#about" style={S.logo}>Earl Brian</a>
       <div style={{ display:"flex", alignItems:"center", gap:24 }}>
         <ul style={S.navLinks}>
-          {["About","Projects","Skills","Links","Contact"].map(n => (
+          {["About","Projects","Skills","Links","Experience"].map(n => (
             <li key={n}><a href={`#${n.toLowerCase()}`} style={S.navLink}>{n}</a></li>
           ))}
         </ul>

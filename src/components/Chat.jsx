@@ -29,11 +29,11 @@ export default function Chat() {
     emailjs.send(
       "service_gtshhgc",
       "template_n19pzpb",
-      { from_name:"Chat Widget", from_email:"chat@portfolio", message:"[Via Chat Widget]\n\n" + msg },
+      { from_name:"Chat Widget", from_email:"chat@portfolio.com", message:"[Via Chat Widget]\n\n" + msg },
       "iWk-lPetzVnFdwc8O"
     )
     .then(() => { setSent(true); setSending(false); })
-    .catch(() => { setSending(false); alert("Failed to send. Please use the contact form."); });
+    .catch((err) => { setSending(false); console.error("EmailJS error:", err); alert("Failed to send. Error: " + JSON.stringify(err)); });
   };
 
   return (

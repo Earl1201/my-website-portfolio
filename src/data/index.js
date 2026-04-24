@@ -3,19 +3,10 @@
 // Each item: { title, desc, tags[] }
 export const projects = [
   {
-    title: "E-Commerce Platform",
-    desc: "A full-stack shopping experience with cart management, user auth, and payment integration.",
-    tags: ["React", "Node.js", "MongoDB"],
-  },
-  {
-    title: "Dashboard UI",
-    desc: "Analytics dashboard with real-time data visualization and responsive layout.",
-    tags: ["React", "Recharts", "TailwindCSS"],
-  },
-  {
-    title: "Portfolio CMS",
-    desc: "A CMS for creatives to manage and publish their work online.",
-    tags: ["Next.js", "Sanity", "Vercel"],
+    title: "Satin Fuzz Flora",
+    desc: "An online business website for a local plant and flower shop, featuring a product catalog and order management.",
+    tags: ["Google Apps Script", "HTML", "JavaScript", "CSS", "Microsoft Excel"],
+    url: "http://satinfuzzflora.store/",
   },
 ];
 
@@ -38,6 +29,15 @@ export const skills = [
       ["Node.js / Express", "Intermediate"],
     ],
   },
+];
+
+// ─── EXPERIENCE ──────────────────────────────────────────────────────────────
+// Edit this array to update the Experience section.
+// Each item: { year, title, subtitle, current? }
+export const experience = [
+  { year: "2026",        title: "Satin Fuzz Flora",              subtitle: "Built & launched business website · Mar 7",          current: false },
+  { year: "2023 – now",  title: "BS Information Technology",     subtitle: "University of Cebu Lapu-Lapu and Mandaue (UCLM)",    current: true  },
+  { year: "2023",        title: "Hello World!",                  subtitle: "Wrote my first line of code",                        current: false },
 ];
 
 // ─── LINKS ───────────────────────────────────────────────────────────────────

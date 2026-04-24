@@ -3,9 +3,9 @@ import Navbar   from './components/Navbar';
 import About    from './components/About';
 import Projects from './components/Projects';
 import Skills   from './components/Skills';
-import Links    from './components/Links';
-import Contact  from './components/Contact';
-import Footer   from './components/Footer';
+import Links      from './components/Links';
+import Experience from './components/Experience';
+import Footer     from './components/Footer';
 import Chat     from './components/Chat';
 
 export default function Portfolio() {
@@ -38,9 +38,9 @@ export default function Portfolio() {
       <div className="divider" />
       <Skills />
       <div className="divider" />
-      <Links />
+      <Experience />
       <div className="divider" />
-      <Contact />
+      <Links />
       <Footer />
       <Chat />
     </>

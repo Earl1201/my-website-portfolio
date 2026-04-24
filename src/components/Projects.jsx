@@ -13,16 +13,22 @@ export default function Projects() {
         Projects <span style={{ display:"block", width:40, height:1, background:"var(--text-accent)" }} />
       </div>
 
-      <div style={{ display:"grid", gridTemplateColumns:"repeat(3,1fr)", gap:1, background:"var(--border)" }}>
+      <div style={{ display:"grid", gridTemplateColumns:`repeat(${Math.min(projects.length, 3)},1fr)`, gap:1, background:"var(--border)" }}>
         {projects.map((p, i) => (
-          <div className={`project-card reveal reveal-delay-${i + 1}`} key={i}>
+          <a
+            key={i}
+            href={p.url || undefined}
+            target={p.url ? "_blank" : undefined}
+            rel="noopener noreferrer"
+            className={`project-card reveal reveal-delay-${i + 1}`}
+            style={{ textDecoration:"none", cursor: p.url ? "pointer" : "default" }}>
             <div style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:"0.8rem", color:"var(--text-accent)", marginBottom:20 }}>0{i + 1}</div>
             <div style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:"1.4rem", fontWeight:500, color:"var(--text-primary)", marginBottom:10 }}>{p.title}</div>
             <p style={{ fontSize:"0.85rem", fontWeight:400, color:"var(--text-muted)", lineHeight:1.7, marginBottom:24 }}>{p.desc}</p>
             <div style={{ display:"flex", flexWrap:"wrap", gap:8 }}>
               {p.tags.map(t => <span key={t} style={S.tag}>{t}</span>)}
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </section>

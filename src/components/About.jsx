@@ -42,9 +42,9 @@ export default function About({ dark }) {
 
           <div className="reveal reveal-delay-2">
             <p style={S.bio}>
-              I'm Earl Brian, a web developer based in the Philippines with a passion for
-              building clean, functional, and user-centered digital experiences. I specialize
-              in turning ideas into well-crafted products.
+              I'm Earl Brian, a 3rd year BSIT student based in the Philippines with a passion for
+              building clean, functional, and user-centered digital experiences. I enjoy turning
+              ideas into well-crafted web products and am actively looking for opportunities to grow.
             </p>
 
             <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:"16px 32px" }}>
@@ -52,7 +52,7 @@ export default function About({ dark }) {
                 ["Location",     "Philippines"],
                 ["Availability", "Open to Work"],
                 ["Focus",        "Frontend & Fullstack"],
-                ["Experience",   "2+ Years"],
+                ["Status",       "3rd Year BSIT"],
               ].map(([lbl, val]) => (
                 <div key={lbl}>
                   <div style={{ fontSize:"0.62rem", letterSpacing:"0.18em", textTransform:"uppercase", color:"var(--text-muted)", marginBottom:4, fontWeight:500 }}>{lbl}</div>

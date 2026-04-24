@@ -52,9 +52,6 @@ export default function Contact() {
           <p style={{ fontSize:"0.92rem", fontWeight:400, color:"var(--text-muted)", lineHeight:1.8, marginBottom:28 }}>
             Have a project in mind or want to discuss an opportunity? I'd love to hear from you.
           </p>
-          <p style={{ fontSize:"0.82rem", color:"var(--text-accent)", fontStyle:"italic" }}>
-            Or use the "Message me" button at the bottom right →
-          </p>
         </div>
 
         {sent ? (

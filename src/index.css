@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg: #ffffff;
+  --bg-nav: rgba(255, 255, 255, 0.95);
+  --bg-card: #ffffff;
+  --bg-card-hover: #f5f5f5;
+  --bg-tag: #f2f2f2;
+  --text-primary: #0a0a0a;
+  --text-secondary: #2d2d2d;
+  --text-muted: #5a5a5a;
+  --text-accent: #999999;
+  --border: #e0e0e0;
+  --btn-bg: #0a0a0a;
+  --btn-text: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg: #0c0c0c;
+  --bg-nav: rgba(12, 12, 12, 0.95);
+  --bg-card: #141414;
+  --bg-card-hover: #1c1c1c;
+  --bg-tag: #1e1e1e;
+  --text-primary: #f0f0f0;
+  --text-secondary: #c0c0c0;
+  --text-muted: #888888;
+  --text-accent: #505050;
+  --border: #282828;
+  --btn-bg: #f0f0f0;
+  --btn-text: #0a0a0a;
+}
+
+*, *::before, *::after {
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text-secondary);
+}
+
+html { scroll-behavior: smooth; }
+
+a:hover { color: var(--text-primary) !important; }
+
+.project-card,
+.link-card {
+  background: var(--bg-card);
+  transition: background 0.2s;
+}
+.project-card { padding: 36px 32px; }
+.project-card:hover,
+.link-card:hover { background: var(--bg-card-hover); }
+
+input,
+textarea {
+  width: 100%;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  padding: 12px 0;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-primary);
+  outline: none;
+  resize: none;
+}
+input::placeholder,
+textarea::placeholder { color: var(--text-muted); }
+input:focus,
+textarea:focus { border-bottom-color: var(--text-primary); }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+.chat-textarea {
+  width: 100%;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.83rem;
+  font-weight: 400;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  outline: none;
+  resize: none;
+  line-height: 1.5;
+}
+.chat-textarea::placeholder { color: var(--text-muted); }
+
+.btn-hover:hover { opacity: 0.82; }
+
+.divider {
+  width: 100%;
+  max-width: 1100px;
+  height: 1px;
+  background: var(--border);
+  margin: 0 auto;
+}

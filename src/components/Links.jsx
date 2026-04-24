@@ -18,7 +18,7 @@ export default function Links() {
         Links <span style={{ display:"block", width:40, height:1, background:"var(--text-accent)" }} />
       </div>
 
-      <div style={{ display:"grid", gridTemplateColumns:"repeat(3,1fr)", gap:48 }}>
+      <div className="links-grid">
         {links.map(({ category, items }, ci) => (
           <div key={category} className={`reveal reveal-delay-${ci + 1}`}>
             <div style={S.linkCategory}>{category}</div>

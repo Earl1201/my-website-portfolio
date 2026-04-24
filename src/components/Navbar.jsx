@@ -1,25 +1,49 @@
 const S = {
-  nav: { position:"fixed", top:0, left:0, right:0, zIndex:100, background:"var(--bg-nav)", backdropFilter:"blur(16px)", borderBottom:"1px solid var(--border)", padding:"0 48px", height:64, display:"flex", alignItems:"center", justifyContent:"space-between" },
-  logo: { fontFamily:"'Cormorant Garamond', serif", fontSize:"1.4rem", fontWeight:600, color:"var(--text-primary)", textDecoration:"none" },
-  navLinks: { display:"flex", gap:36, listStyle:"none" },
+  nav: { position:"fixed", top:0, left:0, right:0, zIndex:100, background:"var(--bg-nav)", backdropFilter:"blur(16px)", borderBottom:"1px solid var(--border)", padding:"0 48px", height:64, display:"flex", alignItems:"center", justifyContent:"center" },
+  navLinks: { display:"flex", gap:36, listStyle:"none", alignItems:"center" },
   navLink: { fontSize:"0.78rem", letterSpacing:"0.1em", textTransform:"uppercase", color:"var(--text-muted)", textDecoration:"none", fontWeight:400 },
-  themeToggle: { fontFamily:"'DM Sans',sans-serif", fontSize:"0.68rem", letterSpacing:"0.14em", textTransform:"uppercase", background:"none", border:"1px solid var(--border)", color:"var(--text-muted)", padding:"6px 14px", cursor:"pointer", borderRadius:2 },
+  themeToggle: { position:"absolute", right:48, background:"none", border:"none", cursor:"pointer", color:"var(--text-muted)", display:"flex", alignItems:"center", padding:4, lineHeight:1 },
 };
+
+function SunIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="5"/>
+      <line x1="12" y1="1" x2="12" y2="3"/>
+      <line x1="12" y1="21" x2="12" y2="23"/>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+      <line x1="1" y1="12" x2="3" y2="12"/>
+      <line x1="21" y1="12" x2="23" y2="12"/>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+    </svg>
+  );
+}
+
+function MoonIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+    </svg>
+  );
+}
 
 export default function Navbar({ dark, setDark }) {
   return (
-    <nav style={S.nav}>
-      <a href="#about" style={S.logo}>Earl Brian</a>
-      <div style={{ display:"flex", alignItems:"center", gap:24 }}>
-        <ul style={S.navLinks}>
-          {["About","Projects","Skills","Links","Experience"].map(n => (
-            <li key={n}><a href={`#${n.toLowerCase()}`} style={S.navLink}>{n}</a></li>
-          ))}
-        </ul>
-        <button className="btn-hover" style={S.themeToggle} onClick={() => setDark(d => !d)}>
-          {dark ? "Light" : "Dark"}
-        </button>
-      </div>
+    <nav aria-label="Main navigation" style={S.nav}>
+      <ul style={S.navLinks}>
+        {["About", "Projects", "Contact"].map(n => (
+          <li key={n}><a href={`#${n.toLowerCase()}`} style={S.navLink}>{n}</a></li>
+        ))}
+      </ul>
+      <button
+        className="btn-hover"
+        style={S.themeToggle}
+        onClick={() => setDark(d => !d)}
+        aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}>
+        {dark ? <SunIcon /> : <MoonIcon />}
+      </button>
     </nav>
   );
 }

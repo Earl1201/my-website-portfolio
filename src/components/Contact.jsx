@@ -9,6 +9,8 @@ const S = {
 
 export default function Contact() {
   const [form, setForm] = useState({ name:"", email:"", message:"" });
+  const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
   const set = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
   const sendEmail = (e) => {
@@ -17,6 +19,7 @@ export default function Contact() {
       alert("Please fill in all fields.");
       return;
     }
+    setSending(true);
     emailjs.send(
       "service_gtshhgc",
       "template_n19pzpb",
@@ -24,12 +27,14 @@ export default function Contact() {
       "iWk-lPetzVnFdwc8O"
     )
     .then(() => {
-      alert("Message sent successfully!");
+      setSent(true);
+      setSending(false);
       setForm({ name:"", email:"", message:"" });
     })
     .catch((err) => {
+      setSending(false);
       console.error(err);
-      alert("Failed to send message.");
+      alert("Message failed to send. You can reach me directly at Earlbrianbaclohan1201@gmail.com");
     });
   };
 
@@ -39,7 +44,7 @@ export default function Contact() {
         Contact <span style={{ display:"block", width:40, height:1, background:"var(--text-accent)" }} />
       </div>
 
-      <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:80 }}>
+      <div className="contact-grid">
         <div className="reveal">
           <h2 style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:"clamp(2rem,3.5vw,3rem)", fontWeight:400, color:"var(--text-primary)", lineHeight:1.15, marginBottom:20 }}>
             Let's work<br />together.
@@ -48,23 +53,33 @@ export default function Contact() {
             Have a project in mind or want to discuss an opportunity? I'd love to hear from you.
           </p>
           <p style={{ fontSize:"0.82rem", color:"var(--text-accent)", fontStyle:"italic" }}>
-            Or use the "Chat with Earl" button below →
+            Or use the "Message me" button at the bottom right →
           </p>
         </div>
 
-        <form className="reveal reveal-delay-1" onSubmit={sendEmail} style={{ display:"flex", flexDirection:"column", gap:20 }}>
-          {[["name","Name","Your full name"],["email","Email","your@email.com"]].map(([name,label,ph]) => (
-            <div key={name}>
-              <div style={{ fontSize:"0.62rem", letterSpacing:"0.18em", textTransform:"uppercase", color:"var(--text-muted)", marginBottom:6, fontWeight:500 }}>{label}</div>
-              <input name={name} value={form[name]} onChange={set} placeholder={ph} />
-            </div>
-          ))}
-          <div>
-            <div style={{ fontSize:"0.62rem", letterSpacing:"0.18em", textTransform:"uppercase", color:"var(--text-muted)", marginBottom:6, fontWeight:500 }}>Message</div>
-            <textarea name="message" value={form.message} onChange={set} rows={5} placeholder="Tell me about your project..." />
+        {sent ? (
+          <div className="reveal reveal-delay-1" style={{ display:"flex", flexDirection:"column", justifyContent:"center", gap:8 }}>
+            <div style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:"1.5rem", fontWeight:400, color:"var(--text-primary)" }}>Message sent!</div>
+            <p style={{ fontSize:"0.88rem", color:"var(--text-muted)", lineHeight:1.7 }}>Thanks for reaching out. I'll get back to you as soon as I can.</p>
+            <button onClick={() => setSent(false)} style={{ ...S.btn, marginTop:8, alignSelf:"flex-start" }}>Send another</button>
           </div>
-          <button type="submit" className="btn-hover" style={S.btn}>Send Message</button>
-        </form>
+        ) : (
+          <form className="reveal reveal-delay-1" onSubmit={sendEmail} style={{ display:"flex", flexDirection:"column", gap:20 }}>
+            {[["name","Name","Your full name"],["email","Email","Earlbrianbaclohan1201@gmail.com"]].map(([name,label,ph]) => (
+              <div key={name}>
+                <div style={{ fontSize:"0.62rem", letterSpacing:"0.18em", textTransform:"uppercase", color:"var(--text-muted)", marginBottom:6, fontWeight:500 }}>{label}</div>
+                <input name={name} value={form[name]} onChange={set} placeholder={ph} />
+              </div>
+            ))}
+            <div>
+              <div style={{ fontSize:"0.62rem", letterSpacing:"0.18em", textTransform:"uppercase", color:"var(--text-muted)", marginBottom:6, fontWeight:500 }}>Message</div>
+              <textarea name="message" value={form.message} onChange={set} rows={5} placeholder="Tell me about your project or opportunity..." />
+            </div>
+            <button type="submit" className="btn-hover" style={S.btn} disabled={sending}>
+              {sending ? "Sending…" : "Send Message"}
+            </button>
+          </form>
+        )}
       </div>
     </section>
   );

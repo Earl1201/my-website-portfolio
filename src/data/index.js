@@ -8,6 +8,12 @@ export const projects = [
     tags: ["Google Apps Script", "HTML", "JavaScript", "CSS", "Microsoft Excel"],
     url: "http://satinfuzzflora.store/",
   },
+  {
+    title: "Personal Portfolio",
+    desc: "This portfolio — built with React and Vite, featuring dark mode, scroll-reveal animations, and a floating message widget. Deployed to GitHub Pages.",
+    tags: ["React", "Vite", "CSS", "EmailJS", "GitHub Pages"],
+    url: "https://earl1201.github.io/my-website-portfolio/",
+  },
 ];
 
 // ─── SKILLS ──────────────────────────────────────────────────────────────────
@@ -37,6 +43,7 @@ export const skills = [
 export const experience = [
   { year: "2026",        title: "Satin Fuzz Flora",              subtitle: "Built & launched business website · Mar 7",          current: false },
   { year: "2023 – now",  title: "BS Information Technology",     subtitle: "University of Cebu Lapu-Lapu and Mandaue (UCLM)",    current: true  },
+  { year: "2023 – now",  title: "Working Scholar",               subtitle: "UCLM · Senior High School Department",               current: true  },
   { year: "2023",        title: "Hello World!",                  subtitle: "Wrote my first line of code",                        current: false },
 ];
 

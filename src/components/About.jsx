@@ -34,10 +34,10 @@ export default function About({ dark }) {
         </div>
 
         <div>
-          <div style={S.name}>Earl Brian</div>
+          <div style={S.name}>Earl Brian Baclohan</div>
           <div style={S.subtitle}>Web Developer &amp; Problem Solver</div>
           <div style={S.location}>
-            <span aria-hidden="true">📍</span> Philippines
+            <span aria-hidden="true">📍</span> Mandaue City, Cebu, Philippines
           </div>
           <div style={{ display:"flex", flexWrap:"wrap", gap:8 }}>
             {[

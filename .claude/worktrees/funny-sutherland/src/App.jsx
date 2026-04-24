@@ -74,7 +74,7 @@ export default function Portfolio() {
 
       {/* NAVBAR */}
       <nav style={S.nav}>
-        <a href="#about" style={S.logo}>Earl Brian</a>
+        <a href="#about" style={S.logo}>Earl Brian Baclohan</a>
         <ul style={S.navLinks}>
           {["About","Projects","Skills","Contact"].map(n => (
             <li key={n}><a href={`#${n.toLowerCase()}`} style={S.navLink}>{n}</a></li>

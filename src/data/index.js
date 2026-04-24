@@ -26,19 +26,16 @@ export const skills = [
   {
     group: "Frontend",
     items: [
-      ["React / Next.js", "Advanced"],
-      ["HTML & CSS", "Advanced"],
-      ["JavaScript", "Advanced"],
-      ["TailwindCSS", "Proficient"],
+      ["React / Next.js", "Intermediate"],
+      ["HTML & CSS", "Intermediate"],
+      ["JavaScript", "Intermediate"],
+      ["TailwindCSS", "Intermediate"],
     ],
   },
   {
     group: "Backend",
     items: [
-      ["Node.js / Express", "Proficient"],
-      ["REST APIs", "Proficient"],
-      ["MongoDB", "Intermediate"],
-      ["PostgreSQL", "Intermediate"],
+      ["Node.js / Express", "Intermediate"],
     ],
   },
 ];
@@ -48,23 +45,17 @@ export const skills = [
 // Each item: { label, url, note }
 export const links = [
   {
-    category: "Projects",
-    items: [
-      { label: "E-Commerce Platform", url: "https://your-live-url.com", note: "Live Demo" },
-      { label: "Dashboard UI", url: "https://your-live-url.com", note: "Live Demo" },
-    ],
-  },
-  {
     category: "Social",
     items: [
       { label: "GitHub", url: "https://github.com/Earl1201", note: "@Earl1201" },
       { label: "LinkedIn", url: "https://linkedin.com/in/earl-brian-baclohan-282a0b3a1/", note: "Connect" },
+      { label: "Facebook", url: "https://www.facebook.com/earl.brian.baclohan.2025", note: "Earl Brian" },
     ],
   },
   {
-    category: "Certifications",
+    category: "Projects",
     items: [
-      { label: "Your Cert Name", url: "https://credential-url.com", note: "Issuer · Year" },
+      { label: "Satin Fuzz Flora", url: "http://satinfuzzflora.store/", note: "Business Website" },
     ],
   },
 ];

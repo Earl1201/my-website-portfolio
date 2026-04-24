@@ -23,8 +23,8 @@ const projects = [
 ];
 
 const skills = [
-  { group:"Frontend", items:[["React / Next.js","Advanced"],["HTML & CSS","Advanced"],["JavaScript","Advanced"],["TailwindCSS","Proficient"]] },
-  { group:"Backend",  items:[["Node.js / Express","Proficient"],["REST APIs","Proficient"],["MongoDB","Intermediate"],["PostgreSQL","Intermediate"]] },
+  { group:"Frontend", items:[["React / Next.js","Intermediate"],["HTML & CSS","Intermediate"],["JavaScript","Intermediate"],["TailwindCSS","Intermediate"]] },
+  { group:"Backend",  items:[["Node.js / Express","Intermediate"]] },
 ];
 
 export default function Portfolio() {

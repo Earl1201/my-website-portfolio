@@ -49,7 +49,7 @@ export default function Contact() {
           <h2 style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:"clamp(2rem,3.5vw,3rem)", fontWeight:400, color:"var(--text-primary)", lineHeight:1.15, marginBottom:20 }}>
             Let's work<br />together.
           </h2>
-          <p style={{ fontSize:"0.92rem", fontWeight:400, color:"var(--text-muted)", lineHeight:1.8, marginBottom:28 }}>
+          <p style={{ fontSize:"0.92rem", fontWeight:400, color:"var(--text-muted)", lineHeight:1.8, marginBottom:28, background:"var(--bg-tag)", borderLeft:"3px solid var(--text-accent)", padding:"12px 16px", borderRadius:2 }}>
             Have a project in mind or want to discuss an opportunity? I'd love to hear from you.
           </p>
         </div>

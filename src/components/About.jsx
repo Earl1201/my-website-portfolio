@@ -39,7 +39,7 @@ export default function About({ dark }) {
           <div style={S.location}>
             <span aria-hidden="true">📍</span> Mandaue City, Cebu, Philippines
           </div>
-          <div style={{ display:"flex", flexWrap:"wrap", gap:8 }}>
+          <div className="hero-links" style={{ display:"flex", flexWrap:"wrap", gap:8 }}>
             {[
               ["GitHub",   "https://github.com/Earl1201"],
               ["LinkedIn", "https://linkedin.com/in/earl-brian-baclohan-282a0b3a1/"],
@@ -53,6 +53,13 @@ export default function About({ dark }) {
                 {label}
               </a>
             ))}
+            <a href="/my-website-portfolio/resume.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="action-btn btn-hover"
+              style={{ fontWeight:600 }}>
+              Resume ↗
+            </a>
           </div>
         </div>
       </div>
@@ -64,10 +71,12 @@ export default function About({ dark }) {
         <div className="reveal reveal-delay-1">
           <div style={S.sectionHead}>About</div>
           <p style={S.bio}>
-            I'm Earl Brian, a 3rd year BSIT student based in the Philippines with a passion for
-            building clean, functional, and user-centered digital experiences. I enjoy turning
-            ideas into well-crafted web products and am currently open to internship opportunities
-            and freelance projects.
+            I'm Earl Brian, a 3rd year BSIT student at the University of Cebu Lapu-Lapu and
+            Mandaue, focused on building clean, functional, and user-centered web experiences.
+            I have a growing interest in AI-powered development — leveraging large language models
+            and intelligent tooling to design smarter applications and accelerate how modern
+            products are built. I'm currently open to internship opportunities and freelance
+            projects where I can bring strong web fundamentals and an AI-forward mindset.
           </p>
 
           <div style={S.sectionHead}>Tech Stack</div>

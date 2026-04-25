@@ -3,6 +3,12 @@
 // Each item: { title, desc, tags[] }
 export const projects = [
   {
+    title: "NeighborHub",
+    desc: "A local community marketplace where neighbors can buy and sell items, offer services, message each other, and place orders. Features a full admin dashboard with analytics. Built as an IT-ELEC 2 project.",
+    tags: ["React", "Vite", "Node.js", "Express", "MySQL", "TailwindCSS", "Vercel"],
+    url: "https://neighborhub-theta.vercel.app/",
+  },
+  {
     title: "Satin Fuzz Flora",
     desc: "An online business website for a local plant and flower shop, featuring a product catalog and order management.",
     tags: ["Google Apps Script", "HTML", "JavaScript", "CSS", "Microsoft Excel"],
@@ -41,6 +47,7 @@ export const skills = [
 // Edit this array to update the Experience section.
 // Each item: { year, title, subtitle, current? }
 export const experience = [
+  { year: "2026",        title: "NeighborHub",                   subtitle: "Built for IT-ELEC 2 · Community marketplace platform", current: false },
   { year: "2026",        title: "Satin Fuzz Flora",              subtitle: "Built & launched business website · Mar 7",          current: false },
   { year: "2023 – now",  title: "BS Information Technology",     subtitle: "University of Cebu Lapu-Lapu and Mandaue (UCLM)",    current: true  },
   { year: "2023 – now",  title: "Working Scholar",               subtitle: "UCLM · Senior High School Department",               current: true  },

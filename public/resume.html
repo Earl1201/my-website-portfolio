@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Earl Brian Baclohan — Resume</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 10.5pt;
+      color: #1a1a1a;
+      background: #fff;
+      line-height: 1.55;
+    }
+
+    /* ── Page wrapper ── */
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 52px 56px 60px;
+    }
+
+    /* ── Print button (hidden on print) ── */
+    .print-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: #0a0a0a;
+      color: #fff;
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      z-index: 100;
+    }
+    .print-bar span { opacity: 0.6; }
+    .print-btn {
+      background: #fff;
+      color: #0a0a0a;
+      border: none;
+      padding: 6px 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 2px;
+    }
+    .print-btn:hover { background: #e5e5e5; }
+
+    /* ── Header ── */
+    header {
+      border-bottom: 2px solid #1a1a1a;
+      padding-bottom: 18px;
+      margin-bottom: 24px;
+      margin-top: 20px;
+    }
+    .header-name {
+      font-family: 'EB Garamond', serif;
+      font-size: 28pt;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      color: #0a0a0a;
+      margin-bottom: 4px;
+    }
+    .header-title {
+      font-size: 10pt;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #555;
+      margin-bottom: 10px;
+    }
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 20px;
+      font-size: 9pt;
+      color: #444;
+    }
+    .contact-row a {
+      color: #444;
+      text-decoration: none;
+    }
+    .contact-row a:hover { text-decoration: underline; }
+    .contact-row span::before { content: "•"; margin-right: 20px; opacity: 0.4; }
+    .contact-row span:first-child::before { display: none; }
+
+    /* ── Sections ── */
+    section { margin-bottom: 22px; }
+
+    .section-title {
+      font-family: 'EB Garamond', serif;
+      font-size: 13pt;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: #0a0a0a;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      font-size: 9pt;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.14em;
+    }
+
+    /* ── Summary ── */
+    .summary p {
+      font-size: 10pt;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    /* ── Entry rows (education, experience, projects) ── */
+    .entry {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+    .entry-left { flex: 1; }
+    .entry-right {
+      font-size: 9pt;
+      color: #777;
+      white-space: nowrap;
+      margin-left: 16px;
+      padding-top: 1px;
+    }
+    .entry-title {
+      font-weight: 600;
+      font-size: 10.5pt;
+      color: #0a0a0a;
+      margin-bottom: 1px;
+    }
+    .entry-sub {
+      font-size: 9.5pt;
+      color: #555;
+      margin-bottom: 4px;
+    }
+    .entry-desc {
+      font-size: 9pt;
+      color: #555;
+      line-height: 1.6;
+    }
+    .entry-link {
+      font-size: 8.5pt;
+      color: #777;
+      font-family: monospace;
+    }
+    .entry-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 5px;
+    }
+    .tag {
+      font-size: 7.5pt;
+      padding: 1px 7px;
+      border: 1px solid #ccc;
+      border-radius: 2px;
+      color: #555;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Skills ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 6px 16px;
+      font-size: 9.5pt;
+    }
+    .skill-group-label {
+      font-weight: 600;
+      color: #333;
+    }
+    .skill-group-items { color: #444; }
+
+    /* ── Print styles ── */
+    @media print {
+      .print-bar { display: none; }
+      body { font-size: 10pt; }
+      .page { padding: 32px 40px; max-width: 100%; margin-top: 0; }
+      header { margin-top: 0; }
+      a { color: #333 !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Print bar -->
+  <div class="print-bar">
+    <span>Earl Brian Baclohan — Resume</span>
+    <button class="print-btn" onclick="window.print()">Save as PDF</button>
+  </div>
+
+  <div class="page">
+
+    <!-- Header -->
+    <header>
+      <div class="header-name">Earl Brian Baclohan</div>
+      <div class="header-title">Web Developer &amp; AI-Forward Problem Solver</div>
+      <div class="contact-row">
+        <span>Mandaue City, Cebu, Philippines</span>
+        <span><a href="mailto:earlbrianbaclohan1201@gmail.com">earlbrianbaclohan1201@gmail.com</a></span>
+        <span><a href="https://github.com/Earl1201" target="_blank">github.com/Earl1201</a></span>
+        <span><a href="https://linkedin.com/in/earl-brian-baclohan-282a0b3a1/" target="_blank">linkedin.com/in/earl-brian-baclohan-282a0b3a1</a></span>
+        <span><a href="https://earl1201.github.io/my-website-portfolio/" target="_blank">earl1201.github.io/my-website-portfolio</a></span>
+      </div>
+    </header>
+
+    <!-- Summary -->
+    <section class="summary">
+      <div class="section-title">Professional Summary</div>
+      <p>
+        Motivated 3rd-year BS Information Technology student with hands-on experience designing
+        and deploying full-stack web applications. Passionate about the intersection of AI and
+        web development — leveraging large language models and intelligent tooling to build
+        smarter, more impactful digital products. Proven ability to deliver complete projects
+        from concept to production, with a strong eye for clean UI and user-centered design.
+        Currently seeking internship opportunities to apply technical skills in a professional
+        setting.
+      </p>
+    </section>
+
+    <!-- Skills -->
+    <section>
+      <div class="section-title">Technical Skills</div>
+      <div class="skills-grid">
+        <div class="skill-group-label">Frontend</div>
+        <div class="skill-group-items">React, Next.js, JavaScript (ES6+), HTML5, CSS3, TailwindCSS, Vite</div>
+
+        <div class="skill-group-label">Backend</div>
+        <div class="skill-group-items">Node.js, Express.js, REST API Design, JWT Authentication</div>
+
+        <div class="skill-group-label">Database</div>
+        <div class="skill-group-items">MySQL, Railway (cloud hosted)</div>
+
+        <div class="skill-group-label">Tools &amp; Platforms</div>
+        <div class="skill-group-items">Git, GitHub, Vercel, Render, GitHub Pages, EmailJS, Google Apps Script</div>
+
+        <div class="skill-group-label">AI &amp; Productivity</div>
+        <div class="skill-group-items">AI-assisted development (Claude, GitHub Copilot), Prompt Engineering</div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section>
+      <div class="section-title">Education</div>
+
+      <div class="entry">
+        <div class="entry-left">
+          <div class="entry-title">Bachelor of Science in Information Technology</div>
+          <div class="entry-sub">University of Cebu Lapu-Lapu and Mandaue (UCLM) — Mandaue City, Cebu</div>
+          <div class="entry-desc">3rd Year Standing &nbsp;·&nbsp; Working Scholar — Senior High School Department</div>
+          <div class="entry-tags" style="margin-top:6px;">
+            <span class="tag" style="background:#fefce8; border-color:#ca8a04; color:#92400e;">🏅 Dean's Lister — AY 2023–2024</span>
+            <span class="tag" style="background:#fefce8; border-color:#ca8a04; color:#92400e;">🏅 Dean's Lister — 1st Sem AY 2024–2025</span>
+          </div>
+        </div>
+        <div class="entry-right">2023 – Present</div>
+      </div>
+    </section>
+
+    <!-- Awards -->
+    <section>
+      <div class="section-title">Awards &amp; Recognition</div>
+
+      <div class="entry">
+        <div class="entry-left">
+          <div class="entry-title">Dean's Lister — Academic Excellence Award</div>
+          <div class="entry-sub">UCLM College of Computer Studies &nbsp;·&nbsp; Philippine Society of Information Technology Students</div>
+        </div>
+        <div class="entry-right">AY 2023–2024</div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-left">
+          <div class="entry-title">Dean's Lister — Certificate of Achievement</div>
+          <div class="entry-sub">UCLM College of Computer Studies</div>
+        </div>
+        <div class="entry-right">1st Sem AY 2024–2025</div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section>
+      <div class="section-title">Experience</div>
+
+      <div class="entry">
+        <div class="entry-left">
+          <div class="entry-title">Working Scholar</div>
+          <div class="entry-sub">UCLM · Senior High School Department — Mandaue City, Cebu</div>
+          <div class="entry-desc">
+            Provided administrative and operational support to the Senior High School Department
+            while maintaining full academic enrollment. Developed strong time-management and
+            professional communication skills in a real workplace environment.
+          </div>
+        </div>
+        <div class="entry-right">2023 – Present</div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section>
+      <div class="section-title">Projects</div>
+
+      <div class="entry">
+        <div class="entry-left">
+          <div class="entry-title">NeighborHub — Community Marketplace Platform</div>
+          <div class="entry-sub">IT-ELEC 2 Capstone Project</div>
+          <div class="entry-desc">
+            Full-stack community marketplace where neighbors can buy and sell items, offer services,
+            message each other, and place orders. Features a complete admin dashboard with
+            analytics, real-time notifications, JWT authentication, and image uploads.
+          </div>
+          <div class="entry-tags">
+            <span class="tag">React 19</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Express</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">TailwindCSS</span>
+            <span class="tag">Vercel</span>
+            <span class="tag">Render</span>
+          </div>
+          <div class="entry-link" style="margin-top:5px;">neighborhub-theta.vercel.app</div>
+        </div>
+        <div class="entry-right">2026</div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-left">
+          <div class="entry-title">Satin Fuzz Flora — Business Website</div>
+          <div class="entry-sub">Client Project · Local Plant &amp; Flower Shop</div>
+          <div class="entry-desc">
+            Designed and launched a full business website for a local plant and flower shop,
+            featuring a product catalog and order management system integrated with Google
+            Apps Script and Microsoft Excel for backend data handling.
+          </div>
+          <div class="entry-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Google Apps Script</span>
+            <span class="tag">Microsoft Excel</span>
+          </div>
+          <div class="entry-link" style="margin-top:5px;">satinfuzzflora.store</div>
+        </div>
+        <div class="entry-right">2026</div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-left">
+          <div class="entry-title">Personal Portfolio Website</div>
+          <div class="entry-sub">Self-Initiated Project</div>
+          <div class="entry-desc">
+            Designed and built a personal portfolio featuring dark mode, scroll-reveal animations,
+            a functional contact form via EmailJS, and full deployment to GitHub Pages.
+          </div>
+          <div class="entry-tags">
+            <span class="tag">React</span>
+            <span class="tag">Vite</span>
+            <span class="tag">CSS</span>
+            <span class="tag">EmailJS</span>
+            <span class="tag">GitHub Pages</span>
+          </div>
+          <div class="entry-link" style="margin-top:5px;">earl1201.github.io/my-website-portfolio</div>
+        </div>
+        <div class="entry-right">2025</div>
+      </div>
+    </section>
+
+  </div><!-- /.page -->
+
+</body>
+</html>

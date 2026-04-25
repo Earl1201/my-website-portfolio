@@ -32,13 +32,13 @@ function MoonIcon() {
 export default function Navbar({ dark, setDark }) {
   return (
     <nav aria-label="Main navigation" style={S.nav}>
-      <ul style={S.navLinks}>
+      <ul className="nav-links" style={S.navLinks}>
         {["About", "Projects", "Contact"].map(n => (
           <li key={n}><a href={`#${n.toLowerCase()}`} style={S.navLink}>{n}</a></li>
         ))}
       </ul>
       <button
-        className="btn-hover"
+        className="btn-hover nav-toggle"
         style={S.themeToggle}
         onClick={() => setDark(d => !d)}
         aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}>
